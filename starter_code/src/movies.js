@@ -39,15 +39,15 @@ let turnHoursToMinutes = (movieArr) => {
     let finalArr = []
     let movieDuration = movieArr.map((movie) => movie.duration )
     movieDuration.map((time) =>{
-        if (time.includes("h")) {
+        if (time.includes("h")) {s
             let arrSplit = time.split(" ")
             let hours = (parseFloat(arrSplit[0]) * 60) 
-            let minutes = parseFloat(arrSplit[1]) || 0
+            let minutes = (parseFloat(arrSplit[1]) || 0)
             result = hours + minutes
             finalArr.push({duration: result})
         }
         else {
-            finalArr.push({duration: parseFloat(time)})
+            finalArr.push({duration:Number(parseFloat(time))})
         }
     })
     return finalArr
@@ -56,5 +56,9 @@ let turnHoursToMinutes = (movieArr) => {
 // BONUS Iteration: Best yearly rate average - Best yearly rate average
 
 let bestYearAvg = (movieArr) => {
-    a.reduce((acc, v) => {acc[v] = []; return acc}, new Object)
+    let movieAr = Set(movieArr)
+    console.log(movieArr)
 }
+
+    // let movieYear = movieArr.filter((movies => movies.year))
+    // console.log(movieYear)
